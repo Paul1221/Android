@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/ColorPallet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </include>
+
+    <TableLayout
+        android:id="@+id/ColorPallet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        app:layout_constraintTop_toBottomOf="@id/toolbar1"
+        app:layout_constraintBottom_toTopOf="@id/tl">
+        <TableRow
+            android:id="@+id/selected_color"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            >
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:text="Choose color"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="40sp" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/ColorRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+            <Button
+                android:id="@+id/RED"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight=".5"
+                android:background="#ff0000"
+                />
+            <Button
+                android:id="@+id/ORANGE"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight=".5"
+                android:background="#ffa500"
+                />
+            <Button
+                android:id="@+id/YELLOW"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight=".5"
+                android:background="#ffff00"
+                />
+        </TableRow>
+        <TableRow
+            android:id="@+id/ColorRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+            <Button
+                android:id="@+id/GREEN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight=".5"
+                android:background="#00ff00"/>
+            <Button
+                android:id="@+id/CYAN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight=".5"
+                android:background="#00ffff"/>
+            <Button
+                android:id="@+id/BLUE"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight=".5"
+                android:background="#0000ff"/>
+        </TableRow>
+        <TableRow
+            android:id="@+id/ColorRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+            <Button
+                android:id="@+id/VIOLET"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight=".5"
+                android:background="#FF00FF"
+                />
+            <Button
+                android:id="@+id/PINK"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight=".5"
+                android:background="#ffc0cb"/>
+            <Button
+                android:id="@+id/GREY"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight=".5"
+                android:background="#808080"/>
+        </TableRow>
+
+
+        <TableRow
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            >
+
+            <Button
+                android:id="@+id/save_to_preset"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight=".5"
+                android:background="@color/purple_500"
+                android:padding="1dp"
+                android:text="Save as preset"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/upload"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight=".5"
+                android:background="@color/purple_500"
+                android:padding="1dp"
+                android:text="Upload"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/load_from_preset"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight=".5"
+                android:background="@color/purple_500"
+                android:padding="1dp"
+                android:text="Load preset"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+        </TableRow>
+    </TableLayout>
+    <TableLayout
+        android:id="@+id/tl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ColorPallet">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/pixel00"
+                style="@style/box_sky_blue"
+
+                />
+
+            <Button
+                android:id="@+id/pixel01"
+                style="@style/box_sky_blue"
+
+
+                />
+
+            <Button
+                android:id="@+id/pixel02"
+
+                style="@style/box_sky_blue"
+
+
+                />
+
+            <Button
+                android:id="@+id/pixel03"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel04"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel05"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel06"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel07"
+                style="@style/box_sky_blue" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+
+            <Button
+                android:id="@+id/pixel10"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel11"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel12"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel13"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel14"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel15"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel16"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel17"
+                style="@style/box_sky_blue" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+
+            <Button
+                android:id="@+id/pixel20"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel21"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel22"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel23"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel24"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel25"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel26"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel27"
+                style="@style/box_sky_blue" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+
+            <Button
+                android:id="@+id/pixel30"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel31"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel32"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel33"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel34"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel35"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel36"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel37"
+                style="@style/box_sky_blue" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+
+            <Button
+                android:id="@+id/pixel40"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel41"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel42"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel43"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel44"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel45"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel46"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel47"
+                style="@style/box_sky_blue" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+
+            <Button
+                android:id="@+id/pixel50"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel51"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel52"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel53"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel54"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel55"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel56"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel57"
+                style="@style/box_sky_blue" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+
+            <Button
+                android:id="@+id/pixel60"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel61"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel62"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel63"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel64"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel65"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel66"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel67"
+                style="@style/box_sky_blue" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+
+            <Button
+                android:id="@+id/pixel70"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel71"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel72"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel73"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel74"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel75"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel76"
+                style="@style/box_sky_blue" />
+
+            <Button
+                android:id="@+id/pixel77"
+                style="@style/box_sky_blue" />
+        </TableRow>
+    </TableLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
